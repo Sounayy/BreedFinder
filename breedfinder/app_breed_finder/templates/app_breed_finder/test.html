@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreedFinder</title>
+</head>
+
+<body>
+    <h1>BreedFinder</h1>
+    <h2>Mes races de chats préférées</h2>
+    <p>
+        J'ai
+        {% if breeds|length < 5 %} peu de {% elif breeds|length < 10 %} quelques {% else %} beaucoup de {% endif %}
+            races préférées </p>
+            <ul>
+                {% for breed in breeds %}
+                <li>{{ breed.name}}</li>
+                {% endfor %}
+            </ul>
+</body>
+
+</html>

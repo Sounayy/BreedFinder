@@ -13,3 +13,6 @@ class Breed(models.Model):
     personality = models.fields.TextField()
     origin = models.fields.TextField()
     eating_habits = models.fields.TextField()
+
+    def __str__(self) -> str:
+        return f"{self.name}"

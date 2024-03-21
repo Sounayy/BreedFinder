@@ -20,6 +20,7 @@ class Breed(models.Model):
     life_esperance_top = models.fields.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(30)]
     )
+    profile_picture = models.ImageField(upload_to="images/", null=True)
 
     def __str__(self) -> str:
         return f"{self.name}"

@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreedFinder</title>
+    <link rel="stylesheet" href="{% static 'app_breed_finder/styles.css' %}">
+</head>
+
+<body>
+    <h1>BreedFinder</h1>
+    <h2>Mes races préférées</h2>
+    <ul>
+        {% for breed in breeds %}
+        <li>{{ breed.name}}</li>
+        {% if breed.profile_picture %}
+        <img src="{{ breed.profile_picture.url }}" width="300">
+        {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

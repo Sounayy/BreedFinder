@@ -28,6 +28,10 @@
         {{ form }}
         <input type="submit" value="tester">
     </form>
+    {% for breed in breeds_predicted %}
+    <h3>{{ breed.name }}</h3>
+    <p>{{ breed.origin }}</p>
+    {% endfor %}
 </body>
 
 </html>

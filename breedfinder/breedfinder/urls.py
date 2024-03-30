@@ -24,5 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="home"),
+    path("breed-identifier/", views.breed_identifier, name="breed-identifier"),
+    path("breedex/", views.breedex, name="breedex"),
+    path("breedex/<int:breed_id>", views.breed_detail, name="breed-detail"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

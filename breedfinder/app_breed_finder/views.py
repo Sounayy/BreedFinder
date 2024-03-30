@@ -6,32 +6,73 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from app_breed_finder.utils.helpers import predicit_breed_from_image
 
+logger = logging.getLogger("mylogger")
+
 
 def home(request):
-    logger = logging.getLogger("mylogger")
+    return render(
+        request,
+        "app_breed_finder/home.html",
+    )
+
+
+def breed_identifier(request):
+
     breeds = Breed.objects.all()
+    breeds = breeds[:5]
+
     breeds_predicted_id = request.session.get("breeds_predicted_id", None)
+    logger.info(breeds_predicted_id)
     if breeds_predicted_id is None:
         breeds_predicted = breeds
     else:
         breeds_predicted = [
             Breed.objects.get(id=breed_id) for breed_id in breeds_predicted_id
         ]
+
     if request.method == "POST":
         form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.cleaned_data["image_uploaded"]
             breeds_predicted_id = predicit_breed_from_image(image)
             request.session["breeds_predicted_id"] = breeds_predicted_id
-            return redirect(reverse("home"))
+            return redirect(reverse("breed-identifier"))
     else:
         form = UploadImageForm()
+
     return render(
         request,
-        "app_breed_finder/home.html",
+        "app_breed_finder/breed-identifier.html",
         {
             "breeds": breeds,
             "form": form,
             "breeds_predicted": breeds_predicted,
+        },
+    )
+
+
+def breedex(request):
+    breeds = Breed.objects.all()
+    selected_animal = request.GET.get("animal")
+    if not selected_animal:
+        selected_animal = "DOG"  # Par défaut, les chiens sont séléctionnés
+    breeds = breeds.filter(animal=selected_animal)
+    return render(
+        request,
+        "app_breed_finder/breedex.html",
+        {
+            "breeds": breeds,
+            "selected_animal": selected_animal,
+        },
+    )
+
+
+def breed_detail(request, breed_id):
+    breed = Breed.objects.get(id=breed_id)
+    return render(
+        request,
+        "app_breed_finder/breed-detail.html",
+        {
+            "breed": breed,
         },
     )

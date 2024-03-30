@@ -1,0 +1,24 @@
+{% extends 'app_breed_finder/base.html' %}
+
+{% block content %}
+
+<h1>BreedFinder</h1>
+<h2>Breedex</h2>
+<form method="get">
+    <select name="animal" id="animal-select">
+        {% if selected_animal == "DOG" %}
+        <option value="DOG" selected>Dog</option>
+        <option value="CAT">Cat</option>
+        {% else %}
+        <option value="DOG">Dog</option>
+        <option value="CAT" selected>Cat</option>
+        {% endif %}
+    </select>
+</form>
+<ul>
+    {% for breed in breeds %}
+    <li><a href="{% url 'breed-detail' breed.id %}">{{ breed.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

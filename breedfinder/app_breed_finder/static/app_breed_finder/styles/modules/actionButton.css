@@ -1,0 +1,16 @@
+.action-button {
+    color: var(--white);
+    background-color: var(--black);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+
+    font-family: var(--title-font);
+    font-style: normal;
+    font-weight: var(--title-font-weight);
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+}
+
+.action-button:hover {
+    cursor: pointer;
+    border: solid 0.25rem black;
+}

@@ -1,0 +1,10 @@
+.ctaSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background-color: var(--blue-highlight);
+    height: 7.5rem;
+    width: 100%;
+}

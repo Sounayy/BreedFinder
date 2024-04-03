@@ -1,0 +1,151 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap');
+/* Modules */
+@import 'modules/appBar.css';
+@import 'modules/ctaSection.css';
+@import 'modules/cta.css';
+@import 'modules/secondButton.css';
+@import 'modules/actionButton.css';
+@import 'modules/breedCard.css';
+@import 'modules/listButton.css';
+/* Pages */
+@import 'pages/home.css';
+@import 'pages/breed-identifier.css';
+@import 'pages/breedex.css';
+@import 'pages/breed-detail.css';
+
+/* Design System */
+:root {
+    /* Colors */
+    --blue-highlight: #80B4FF;
+    --light-green: #7FFFB6;
+    --black: #000000;
+    --white: #FFFFFF;
+
+    /* Text configuration */
+    --body-font: 'Montserrat';
+    --body-highlight-font: 'Montserrat';
+    --header-font: 'Bebas Neue';
+    --title-font: 'Bebas Neue';
+    --second-title-font: 'Bebas Neue';
+
+    --body-font-weight: 400;
+    --body-highlight-font-weight: 600;
+    --header-font-weight: 400;
+    --title-font-weight: 400;
+    --second-title-weight: 400;
+
+    --body-font-size: 1rem;
+    --body-highlight-font-size: 1rem;
+    --header-font-size: 4rem;
+    --title-font-size: 1.5rem;
+    --second-title-font-size: 1.5rem;
+
+    --body-line-height: 1.25rem;
+    --body-highlight-line-height: 1.25rem;
+    --header-line-height: 2rem;
+    --title-line-height: 1.75rem;
+    --second-title-line-height: 1.75rem;
+}
+
+body {
+    font-family: var(--body-font);
+    font-style: normal;
+    font-weight: var(--body-font-weight);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+h1 {
+    font-family: var(--header-font);
+    font-style: normal;
+    font-weight: var(--header-font-weight);
+    font-size: var(--header-font-size);
+    line-height: var(--header-line-height);
+    color: var(--black);
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-style: normal;
+    font-weight: var(--title-font-weight);
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+    color: var(--black);
+}
+
+h3 {
+    font-family: var(--second-title-font);
+    font-style: normal;
+    font-weight: var(--second-title-weight);
+    font-size: var(--second-title-font-size);
+    line-height: var(--second-title-line-height);
+    color: var(--black);
+}
+
+.underlined {
+    text-decoration: underline var(--blue-highlight);
+    text-underline-offset: 0.25rem;
+    text-decoration-thickness: 0.188rem;
+}
+
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: none inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    overflow: hidden;
+}
+
+.round-image {
+    border-radius: 50%;
+}
+
+strong {
+    color: var(--blue-highlight);
+}
+
+p {
+    width: 70rem;
+}
+
+.sticky {
+    position: sticky;
+    bottom: 0;
+}
+
+.container-large-image {
+    width: 11.5rem;
+    height: 11.5rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+.container-img-card {
+    height: 7.5rem;
+    width: 7.5rem;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

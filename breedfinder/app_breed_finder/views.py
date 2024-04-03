@@ -22,13 +22,15 @@ def breed_identifier(request):
     breeds = breeds[:5]
 
     breeds_predicted_id = request.session.get("breeds_predicted_id", None)
-    logger.info(breeds_predicted_id)
     if breeds_predicted_id is None:
         breeds_predicted = breeds
     else:
         breeds_predicted = [
             Breed.objects.get(id=breed_id) for breed_id in breeds_predicted_id
         ]
+
+    first_breed = breeds_predicted[0]
+    other_breeds = breeds_predicted[1:]
 
     if request.method == "POST":
         form = UploadImageForm(request.POST, request.FILES)
@@ -44,9 +46,9 @@ def breed_identifier(request):
         request,
         "app_breed_finder/breed-identifier.html",
         {
-            "breeds": breeds,
+            "first_breed": first_breed,
+            "other_breeds": other_breeds,
             "form": form,
-            "breeds_predicted": breeds_predicted,
         },
     )
 

@@ -2,7 +2,39 @@
 
 {% block content %}
 
-<h1>{{ breed.name }}</h1>
-<p>{{ breed.description }}</p>
+<section class="breed-detail-container">
+    <h1>{{ breed.name }}</h1>
+    <div class="container-large-image">
+        <img class="round-image header-image" src="{{ breed.profile_picture.url }}" alt="Breed photo">
+    </div>
+    <div>
+        <h2 class="underlined">Description</h2>
+        <p>
+            {{ breed.description }}
+        </p>
+    </div>
+    <div>
+        <h2 class="underlined">Personality</h2>
+        <p>
+            {{ breed.personality }}
+        </p>
+    </div>
+    <div>
+        <h2 class="underlined">Origin</h2>
+        <p>
+            {{ breed.origin }}
+        </p>
+    </div>
+    <div>
+        <h2 class="underlined">Eating habits</h2>
+        <p>
+            {{ breed.eating_habits }}
+        </p>
+    </div>
+</section>
+<section class="ctaSection sticky">
+    <a class="CTA" href="{% url 'breedex' %}">Breedex</a>
+    <a class="CTA" href="{% url 'breed-identifier' %}">Identify breed</a>
+</section>
 
 {% endblock %}

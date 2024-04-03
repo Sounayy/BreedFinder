@@ -1,0 +1,15 @@
+.CTA {
+    background-color: var(--light-green);
+    padding: 1rem 2rem 1rem 2rem;
+
+    font-family: var(--title-font);
+    font-style: normal;
+    font-weight: var(--title-font-weight);
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+    color: var(--black);
+}
+
+.CTA:hover {
+    border: 0.125rem solid var(--light-green);
+}

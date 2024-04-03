@@ -1,0 +1,41 @@
+.breed-identifier-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.breed-identifier-header {
+    margin-left: 2rem;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--blue-highlight);
+    width: 100%;
+    height: 7.5rem;
+}
+
+.probable-breeds-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.probable-breeds {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.other-breeds {
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+}

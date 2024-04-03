@@ -1,8 +1,55 @@
 {% extends 'app_breed_finder/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<h1>BreedFinder</h1>
-<h2>Acceuil</h2>
+<section class="hero-header">
+    <div>
+        <h1>BreedFinder</h1>
+        <h2>Are you ready to become a <strong>breed</strong> expert ?</h2>
+    </div>
+    <img class="round-image" src="{% static 'app_breed_finder/assets/logo.png' %}" alt="Logo BreedFinder" width="184">
+</section>
+<section class="home-section">
+    <div>
+        <h2 class="underlined">What is BreedFinder</h2>
+        <p>
+            Welcome to BreedFinder, your go-to destination for quickly <strong>identifying</strong> the most probable
+            <strong>breeds</strong> of your beloved <strong>cat</strong> or <strong>dog</strong> !
+            With just a snap of a <strong>photo</strong>, our intuitive web application provides you with the
+            <strong>4</strong> most likely breed matches along with detailed <strong>descriptions</strong> of each
+            potential breed.
+            We also provide a <strong>Breedex</strong> to <strong>discover</strong> breeds of cats and dogs.
+        </p>
+    </div>
+    <div class="ctaSection">
+        <a class="CTA" href="{% url 'breed-identifier' %}">Identify breed</a>
+        <a class="CTA" href="{% url 'breedex' %}">Discover breeds</a>
+    </div>
+    <div>
+        <h2 class="underlined">Features</h2>
+        <p>
+        <ul>
+            <li>
+                <strong>Probable Breed Identification :</strong> Upload a photo of your cat or dog and discover the 4
+                most probable breed matches.
+            </li>
+            <li>
+                <strong>Comprehensive Breedex :</strong> Explore our extensive Breedex index containing information on
+                various cat and dog breeds.
+            </li>
+            <li>
+                <strong>Detailed Descriptions :</strong>Get insightful descriptions for each of the identified probable
+                breeds, including characteristics, history, and more.
+            </li>
+            <li>
+                <strong>User-Friendly Interface :</strong> Our easy-to-use interface ensures a seamless experience for
+                all users.
+            </li>
+        </ul>
+        </p>
+    </div>
+</section>
 
 {% endblock %}

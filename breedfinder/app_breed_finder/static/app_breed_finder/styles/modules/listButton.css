@@ -1,0 +1,11 @@
+.list-button {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: var(--blue-highlight);
+    border: none;
+
+    font-family: var(--body-font);
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+}

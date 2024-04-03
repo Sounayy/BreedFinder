@@ -7,12 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BreedFinder</title>
-    <link rel="stylesheet" href="{% static 'app_breed_finder/styles/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'app_breed_finder/styles/main.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'app_breed_finder/assets/logo.png' %}">
     <script src="{% static 'app_breed_finder/scripts/script.js' %}" defer></script>
 </head>
 
 <body>
-    {% block content %}{% endblock %}
+    <header class="appBar">
+        {% with request.resolver_match.url_name as url_name %}
+        <nav class="appBar_nav">
+            <a href="{% url 'home' %}"><img src="{% static 'app_breed_finder/assets/logo.png' %}" alt="Logo BreedFinder"
+                    class="appBar_icon round-image"></a>
+            <a class="appBar__navItem {% if url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+            <a class="appBar__navItem {% if url_name == 'breed-identifier' %}active{% endif %}"
+                href="{% url 'breed-identifier' %}">BreedIdentifier</a>
+            <a class="appBar__navItem {% if url_name == 'breedex' %}active{% endif %}"
+                href="{% url 'breedex' %}">Breedex</a>
+        </nav>
+        {% endwith %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 
 </html>

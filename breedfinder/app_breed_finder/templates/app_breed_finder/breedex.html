@@ -2,23 +2,43 @@
 
 {% block content %}
 
-<h1>BreedFinder</h1>
-<h2>Breedex</h2>
-<form method="get">
-    <select name="animal" id="animal-select">
-        {% if selected_animal == "DOG" %}
-        <option value="DOG" selected>Dog</option>
-        <option value="CAT">Cat</option>
-        {% else %}
-        <option value="DOG">Dog</option>
-        <option value="CAT" selected>Cat</option>
-        {% endif %}
-    </select>
-</form>
-<ul>
-    {% for breed in breeds %}
-    <li><a href="{% url 'breed-detail' breed.id %}">{{ breed.name }}</a></li>
-    {% endfor %}
-</ul>
+<section>
+    <div class="breedex-header">
+        <h1>Breedex</h1>
+        <p>
+            Explore our extensive <strong>Breedex</strong> containing information on various <strong>cat and dog
+                breeds</strong>,
+            click on “Show more” to get insightful <strong>descriptions</strong> for each breed, including
+            characteristics, history, and more.
+        </p>
+    </div>
+    <div class="breedex-main">
+        <form method="get">
+            <select class="list-button" name="animal" id="animal-select">
+                {% if selected_animal == "DOG" %}
+                <option value="DOG" selected>Dog</option>
+                <option value="CAT">Cat</option>
+                {% else %}
+                <option value="DOG">Dog</option>
+                <option value="CAT" selected>Cat</option>
+                {% endif %}
+            </select>
+        </form>
+        <div class="breedex-container">
+            {% for breed in breeds %}
+            <div class="breed-card">
+                <div class="container-img-card">
+                    <img class="round-image" src="{{ breed.profile_picture.url }}" alt="Breed picture">
+                </div>
+                <h4>{{ breed.name|capfirst }}</h4>
+                <a class="second-button" href="{% url 'breed-detail' breed.id %}">Show more</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="ctaSection sticky">
+    <a class="CTA" href="{% url 'breed-identifier' %}">Identify breed</a>
+</section>
 
 {% endblock %}

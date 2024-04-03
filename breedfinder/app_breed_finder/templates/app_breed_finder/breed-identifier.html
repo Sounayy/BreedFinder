@@ -2,25 +2,45 @@
 
 {% block content %}
 
-<h1>BreedFinder</h1>
-<h2>Mes races préférées</h2>
-<ul>
-    {% for breed in breeds %}
-    <li>{{ breed.name}}</li>
-    {% if breed.profile_picture %}
-    <img src="{{ breed.profile_picture.url }}" width="300">
-    {% endif %}
-    {% endfor %}
-</ul>
-<h2>Trouve la race à partir d'une photo</h2>
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="tester">
-</form>
-{% for breed in breeds_predicted %}
-<h3>{{ breed.name }}</h3>
-<p>{{ breed.origin }}</p>
-{% endfor %}
+<section class="breed-identifier-container">
+    <div>
+        <div class="breed-identifier-header">
+            <h1>BreedIdentifier</h1>
+            <p>Upload a <strong>photo</strong> of your cat or dog and instantly discover the <strong>4</strong> most
+                probable <strong>breed</strong> matches.</p>
+        </div>
+        <form class="upload-container" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input class="action-button" type="submit" value="Identify">
+        </form>
+    </div>
+    <div class="probable-breeds-container">
+        <h2 class="underlined">Probable breeds</h2>
+        <div class="probable-breeds">
+            <div class="breed-card">
+                <div class="container-large-image">
+                    <img class="round-image" src="{{ first_breed.profile_picture.url }}" alt="First breed match">
+                </div>
+                <h3>{{ first_breed.name|capfirst }}</h3>
+                <a class="second-button" href="{% url 'breed-detail' first_breed.id %}">Show more</a>
+            </div>
+            <div class="other-breeds">
+                {% for breed in other_breeds %}
+                <div class="breed-card">
+                    <div class="container-img-card">
+                        <img class="round-image" src="{{ breed.profile_picture.url }}" alt="Other breed match">
+                    </div>
+                    <h4>{{ breed.name|capfirst }}</h4>
+                    <a class="second-button" href="{% url 'breed-detail' breed.id %}">Show more</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ctaSection sticky">
+    <a href="{% url 'breedex' %}" class="CTA">Discover breeds</a>
+</section>
 
 {% endblock %}

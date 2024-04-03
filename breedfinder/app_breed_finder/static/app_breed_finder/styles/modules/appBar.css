@@ -1,0 +1,31 @@
+.appBar {
+    margin-top: 1rem;
+}
+
+.appBar_nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 2rem;
+}
+
+.appBar_icon {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.appBar__navItem {
+    font-family: var(--title-font);
+    font-style: normal;
+    font-weight: var(--title-font-weight);
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+}
+
+.appBar__navItem:hover,
+.active {
+    text-decoration: underline var(--blue-highlight);
+    text-underline-offset: 0.25rem;
+    text-decoration-thickness: 0.188rem;
+}

@@ -9,7 +9,7 @@ with open(file_path, "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
     for row in reader:
 
-        # Créez une instance de Breed à partir des données du CSV
+        # Create a Breed instance from the CSV data
         instance = Breed(
             name=row["name"],
             animal=row["animal"],
@@ -21,12 +21,12 @@ with open(file_path, "r", encoding="utf-8") as file:
             life_esperance_top=int(row["life_esperance_top"]),
         )
 
-        # Ouvrir et enregistrer l'image à partir du chemin spécifié
+        # Open and save the image from the specified path
         with open(image_path, "rb") as f:
             image_name = "test.jpg"
             instance.profile_picture.save(image_name, File(f))
 
-        # Enregistrez l'objet dans la base de données
+        # Save the object into the database
         instance.save()
 
 print("CSV data has been loaded into the Django database.")

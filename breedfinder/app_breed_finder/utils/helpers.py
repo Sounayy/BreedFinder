@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from app_breed_finder.utils.prediction import predict_image
 
+# Replace the path with the path where you save those files
 MODEL_CAT_DOG = "C:/Users/egeke/Documents/ProjetBreedFinder/breedfinder/app_breed_finder/utils/VGG16_Cat_vs_Dog.h5"
 WEIGHTS_DOG = "C:/Users/egeke/Documents/ProjetBreedFinder/breedfinder/app_breed_finder/utils/EFNB7_weights_Dog.h5"
 WEIGHTS_CAT = "C:/Users/egeke/Documents/ProjetBreedFinder/breedfinder/app_breed_finder/utils/EFNB7_weights_Cat.h5"

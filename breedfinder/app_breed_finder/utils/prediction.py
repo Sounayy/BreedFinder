@@ -134,7 +134,7 @@ def predict_image(image, model_cat_vs_dog, weights_dog, weights_cat):
         "Airedale": ["Bedlington Terrier", "Kerry Blue Terrier", "Border Terrier"],
         "Cairn": ["Norfolk Terrier", "Norwich Terrier", "Yorkshire Terrier"],
         "Australian Terrier": ["Silky Terrier", "Cairn", "Yorkshire Terrier"],
-        "Dandie Dinmont": ["Skye Terrier", "Cairn", "Norwich Terrier"],
+        "Dandie Dinmont": ["Yorkshire Terrier", "Cairn", "Norwich Terrier"],
         "Boston Bull": [
             "Bull Mastiff",
             "Staffordshire Bullterrier",

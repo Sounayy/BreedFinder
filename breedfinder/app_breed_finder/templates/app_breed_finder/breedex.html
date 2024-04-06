@@ -41,4 +41,12 @@
     <a class="CTA" href="{% url 'breed-identifier' %}">Identify breed</a>
 </section>
 
+<script>
+    let animalSelect = document.getElementById('animal-select')
+    animalSelect.addEventListener('change', function () {
+        let form = animalSelect.closest('form');
+        form.submit();
+    });
+</script>
+
 {% endblock %}

@@ -9,13 +9,13 @@
             <p>Upload a <strong>photo</strong> of your cat or dog and instantly discover the <strong>4</strong> most
                 probable <strong>breed</strong> matches.</p>
         </div>
-        <form class="upload-container" action="" method="post" enctype="multipart/form-data">
+        <form class="upload-container" id="form-breedidentifier" action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
             <input class="action-button" type="submit" value="Identify">
         </form>
     </div>
-    <div class="probable-breeds-container">
+    <div class="probable-breeds-container" id="probable-breeds-container">
         <h2 class="underlined">Probable breeds</h2>
         <div class="probable-breeds">
             <div class="breed-card">
@@ -38,9 +38,17 @@
             </div>
         </div>
     </div>
+    <div id="loading-section" class="hidden"></div>
 </section>
 <section class="ctaSection sticky">
     <a href="{% url 'breedex' %}" class="CTA">Discover breeds</a>
 </section>
+
+<script>
+    document.getElementById("form-breedidentifier").addEventListener("submit", function () {
+        document.getElementById("loading-section").classList.remove("hidden")
+        document.getElementById("probable-breeds-container").classList.add("hidden")
+    })
+</script>
 
 {% endblock %}

@@ -149,3 +149,7 @@ p {
         object-fit: cover;
     }
 }
+
+.hidden {
+    display: none;
+}

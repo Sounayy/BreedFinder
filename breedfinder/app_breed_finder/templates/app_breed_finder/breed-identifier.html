@@ -22,7 +22,7 @@
                 <div class="container-large-image">
                     <img class="round-image" src="{{ first_breed.profile_picture.url }}" alt="First breed match">
                 </div>
-                <h3>{{ first_breed.name|capfirst }}</h3>
+                <h2>{{ first_breed.name|capfirst }}</h2>
                 <a class="second-button" href="{% url 'breed-detail' first_breed.id %}">Show more</a>
             </div>
             <div class="other-breeds">
@@ -31,7 +31,7 @@
                     <div class="container-img-card">
                         <img class="round-image" src="{{ breed.profile_picture.url }}" alt="Other breed match">
                     </div>
-                    <h4>{{ breed.name|capfirst }}</h4>
+                    <h3>{{ breed.name|capfirst }}</h3>
                     <a class="second-button" href="{% url 'breed-detail' breed.id %}">Show more</a>
                 </div>
                 {% endfor %}

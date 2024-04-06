@@ -30,7 +30,7 @@
                 <div class="container-img-card">
                     <img class="round-image" src="{{ breed.profile_picture.url }}" alt="Breed picture">
                 </div>
-                <h4>{{ breed.name|capfirst }}</h4>
+                <h3>{{ breed.name|capfirst }}</h3>
                 <a class="second-button" href="{% url 'breed-detail' breed.id %}">Show more</a>
             </div>
             {% endfor %}

@@ -27,19 +27,19 @@
     --body-highlight-font: 'Montserrat';
     --header-font: 'Bebas Neue';
     --title-font: 'Bebas Neue';
-    --second-title-font: 'Bebas Neue';
+    --second-title-font: 'Montserrat';
 
     --body-font-weight: 400;
     --body-highlight-font-weight: 600;
     --header-font-weight: 400;
     --title-font-weight: 400;
-    --second-title-weight: 400;
+    --second-title-weight: 600;
 
     --body-font-size: 1rem;
     --body-highlight-font-size: 1rem;
     --header-font-size: 4rem;
     --title-font-size: 1.5rem;
-    --second-title-font-size: 1.5rem;
+    --second-title-font-size: 1rem;
 
     --body-line-height: 1.25rem;
     --body-highlight-line-height: 1.25rem;

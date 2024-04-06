@@ -4,6 +4,9 @@
 
 <section class="breed-detail-container">
     <h1>{{ breed.name }}</h1>
+    <h3>
+        <strong>Life expectancy</strong> : {{breed.life_esperance_bottom}}-{{breed.life_esperance_top}} years.
+    </h3>
     <div class="container-large-image">
         <img class="round-image header-image" src="{{ breed.profile_picture.url }}" alt="Breed photo">
     </div>
